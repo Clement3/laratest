@@ -30,11 +30,11 @@
                                 <td>
                                     <a href="{{ route('users.destroy', $user) }}"
                                         onclick="event.preventDefault();
-                                        document.getElementById('delete-form').submit();">
+                                        document.getElementById('delete-form-{{ $user->id }}').submit();">
                                         {{ __('Delete') }}
                                     </a>
                                     
-                                    <form id="delete-form" action="{{ route('users.destroy', $user) }}" method="POST" style="display: none;">
+                                    <form id="delete-form-{{ $user->id }}" action="{{ route('users.destroy', $user) }}" method="POST" style="display: none;">
                                     @csrf
                                     @method('DELETE')
                                     </form>
